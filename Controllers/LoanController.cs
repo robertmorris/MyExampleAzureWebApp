@@ -12,39 +12,23 @@ namespace MyExample.Controllers
         // GET: Loan
         public ActionResult Index()
         {
-            var loans = new List<Loan> {
-                new Loan {
-                    PurchasePrice = 247000,
-                    LoanTerm = 30,
-                    InterestRate = 4.0,
-                    DownPayment = 20000,
-                    PropertyTax = 2000,
-                    PMI = 100,
-                    MonthlyPayment = 0
-                },
-                new Loan {
-                    PurchasePrice = 247000,
-                    LoanTerm = 30,
-                    InterestRate = 4.0,
-                    DownPayment = 20000,
-                    PropertyTax = 2000,
-                    PMI = 100,
-                    MonthlyPayment = 0
-                }
-            };
             return View(loans);
         }
 
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View(new Loan());
+        }
+
+        [HttpPost]
+        public ActionResult Create(Loan loan)
+        {
+            loans.Add(loan);
+            return View();
+        }
+
         List<Loan> loans = new List<Loan> {
-                new Loan {
-                    PurchasePrice = 247000,
-                    LoanTerm = 30,
-                    InterestRate = 4.0,
-                    DownPayment = 20000,
-                    PropertyTax = 2000,
-                    PMI = 100,
-                    MonthlyPayment = 0
-                },
                 new Loan {
                     PurchasePrice = 247000,
                     LoanTerm = 30,
