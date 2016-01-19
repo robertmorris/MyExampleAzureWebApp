@@ -50,3 +50,4 @@ C:\Users\scoobydoo\VS Projects\MyExample\MyExample\bin\Antlr3.Runtime.pdb
 C:\Users\scoobydoo\VS Projects\MyExample\MyExample\bin\Newtonsoft.Json.xml
 C:\Users\scoobydoo\VS Projects\MyExample\MyExample\obj\Release\MyExample.dll
 C:\Users\scoobydoo\VS Projects\MyExample\MyExample\obj\Release\MyExample.pdb
+C:\Users\scoobydoo\VS Projects\MyExample\MyExample\obj\Release\MyExample.csprojResolveAssemblyReference.cache

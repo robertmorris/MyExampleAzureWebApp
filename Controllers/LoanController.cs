@@ -9,10 +9,11 @@ namespace MyExample.Controllers
 {
     public class LoanController : Controller
     {
+        LoanManager _loanManager = new LoanManager();
         // GET: Loan
         public ActionResult Index()
         {
-            return View(loans);
+            return View(LoanRepo.loans);
         }
 
         [HttpGet]
@@ -24,20 +25,11 @@ namespace MyExample.Controllers
         [HttpPost]
         public ActionResult Create(Loan loan)
         {
-            loans.Add(loan);
-            return View();
+            var result = _loanManager.CalculateMonthlyPayment(loan);
+            LoanRepo.loans.Add(result);
+            return RedirectToAction("Index"); ;
         }
 
-        List<Loan> loans = new List<Loan> {
-                new Loan {
-                    PurchasePrice = 247000,
-                    LoanTerm = 30,
-                    InterestRate = 4.0,
-                    DownPayment = 20000,
-                    PropertyTax = 2000,
-                    PMI = 100,
-                    MonthlyPayment = 0
-                }
-            };
+
     }
 }
